@@ -10,6 +10,11 @@ namespace Aufgabe6
     {
         public string MajorSubject { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite()
+        }
+
         public Student(int id, string firstName, string secondName, int age, string majorSubject) : base(id, firstName, secondName, age)
         {
             MajorSubject = majorSubject;
